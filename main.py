@@ -1,5 +1,5 @@
 import sys
-from modules.constants import BASIC_RESPONSE, WELCOME, OPTION_1, OPTION_2, OPTION_3, OPTION_4, FAREWELL, PIZZAS, INGREDIENTS, DRINKS, SELECT_OPTION, NUMBER_ERROR
+from modules.constants import WELCOME, OPTION_1, OPTION_2, OPTION_3, OPTION_4, FAREWELL, PIZZAS, INGREDIENTS, DRINKS, SELECT_OPTION, NUMBER_ERROR
 from modules.visuals import header
 from modules.order import executeOrder
 

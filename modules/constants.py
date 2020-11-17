@@ -12,7 +12,3 @@ OPTION_4 = "(4) Salir del sistema"
 SELECT_OPTION = "Seleccione una opción: "
 NUMBER_ERROR = "Debes ingresar un número"
 FAREWELL = 'Gracias por comprar en Pizzería UCAB, vuelva pronto.'
-
-# Respuestas
-BASIC_RESPONSE = ['S','s','N','n']
-

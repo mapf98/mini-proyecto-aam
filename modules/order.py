@@ -2,6 +2,7 @@ from .visuals import header
 from .constants import PIZZAS, INGREDIENTS
 from .info import pizzaOptions, ingredientOptions, getOption
 from .errors import invalidOption
+from .order_extra import addDrinks
 
 def _getPizzaOptions():
   pizza_option = ""
@@ -51,7 +52,7 @@ def _getPizzaCost(pizza_option, pizza_ingredients):
 def _continueOrder():
   continue_order = ""
   while True:
-    continue_order = input('¿Desea continuar [s/n]?: ')
+    continue_order = input('¿Desea agregar otra pizza? [s/n]: ')
     if continue_order.capitalize() == 'N' or continue_order.capitalize() == 'S':
       break
   return continue_order.capitalize() == 'S'
@@ -82,9 +83,17 @@ def executeOrder():
       'cost': pizza_cost
     })
     if _continueOrder():
+      print()
       print('****************************')
     else:
       break
+  
+  total_drinks = addDrinks()
   print('****************************')
-  print(f'EL pedido tiene un total de {len(pizzas)} pizza(s) por un monto de {total_cost}\n')
-  print('Gracias por su compra, regrese pronto')
+  print(f'- EL pedido tiene un total de {len(pizzas)} pizza(s): {total_cost}')
+  if len(total_drinks[0]) > 0:
+    print(f'- EL pedido tiene un total de {len(total_drinks[0])} bebida(s): {total_drinks[1]}')
+  print()
+  total_cost += total_drinks[1]
+  print(f'Por un monto total de {total_cost}\n')
+  print('Gracias por su compra, regrese pronto!')

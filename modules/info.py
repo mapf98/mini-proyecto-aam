@@ -1,7 +1,7 @@
 from .constants import PIZZAS, INGREDIENTS, DRINKS
 from .data import pizzas, ingredients, drinks 
 
-def getListOfElements(name):
+def _getListOfElements(name):
   if name == PIZZAS:
     return pizzas
   if name == INGREDIENTS:
@@ -32,7 +32,7 @@ def drinkOptions():
         print(f'- {option} ({valor})')
 
 def getOption(symbol, listOfElements):
-  elements = getListOfElements(listOfElements)
+  elements = _getListOfElements(listOfElements)
   for option in elements:
     for clave, valor in elements[option].items():
       if clave == 'symbol' and valor == symbol:
