@@ -17,7 +17,7 @@ def addDrinks():
   hasDrinks = True
 
   while True:
-    response = input('¿Desea incluir bebidas a su pedido? [s/n]')
+    response = input('¿Desea incluir bebidas a su pedido? [s/n]: ')
     if response.capitalize() == 'N' or response.capitalize() == 'S':
       break
 
@@ -29,6 +29,7 @@ def addDrinks():
       option = getOption(input("Indique la bebida a seleccionar: "), DRINKS)
       if option != None:
         drinks.append(option)
+        print(f'Subtotal a pagar por una bebida {option[0]}: {option[2]}')
         print()
         while isDone:
           response = input("¿Quiere incluir otra bebida? [s/n]: ")
