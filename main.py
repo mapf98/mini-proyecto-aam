@@ -1,5 +1,5 @@
 import sys
-from modules.constants import WELCOME, OPTION_1, OPTION_2, OPTION_3, OPTION_4, FAREWELL, PIZZAS
+from modules.constants import WELCOME, OPTION_1, OPTION_2, OPTION_3, OPTION_4, FAREWELL, PIZZAS, SELECT_OPTION, NUMBER_ERROR
 from modules.info import ingredientOptions
 from modules.visuals import header
 
@@ -14,10 +14,10 @@ def menu():
   print()
   while True:
     try:
-      option = int(input("Seleccione una opción: "))
+      option = int(input(SELECT_OPTION))
     except ValueError:
       print()
-      print('Debes ingresar un número')
+      print(NUMBER_ERROR)
       print()
       continue
     print()
