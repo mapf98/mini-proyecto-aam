@@ -1,1 +1,1 @@
-__all__ = ['constants', 'data', 'info']
+__all__ = ['constants', 'data', 'info', 'errors']

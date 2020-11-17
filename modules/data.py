@@ -20,10 +20,3 @@ drinks = {
   "Refresco": {"symbol": "re", "price": 30},
   "Jugo": {"symbol": "ju", "price": 55},
 }
-
-desserts = {
-  "Brownie": {"symbol": "br", "price": 50},
-  "Helado Tri Sabor": {"symbol": "ht", "price": 10},
-  "Ensalada de frutas": {"symbol": "ef", "price": 30},
-  "Yogurt de nutella": {"symbol": "yn", "price": 55},
-}
