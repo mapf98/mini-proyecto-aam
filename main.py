@@ -1,6 +1,7 @@
 import sys
 from modules.constants import BASIC_RESPONSE, WELCOME, OPTION_1, OPTION_2, OPTION_3, OPTION_4, FAREWELL, PIZZAS, INGREDIENTS, DRINKS, SELECT_OPTION, NUMBER_ERROR
 from modules.visuals import header
+from modules.order import executeOrder
 
 def menu():
   print()
@@ -21,8 +22,7 @@ def menu():
       continue
     print()
     if option == 1:
-      # LLAMAR A FUNCION DE PIZZERIA
-      print("LLAMAR A FUNCION DE PIZZERIA")
+      executeOrder()
       break
     elif option == 2:
       # LLAMAR A CONSULTA DE COMPRAS
