@@ -33,8 +33,3 @@ def getOption(symbol, listOfElements):
       if clave == 'symbol' and valor == symbol:
         return (option, elements[option]['symbol'], elements[option]['price'])
         
-
-#Ejemplo de uso
-ingredientOptions()
-pizza_option = getOption(input('Indique el ingrediente que desee seleccionar: '), INGREDIENTS)
-print(pizza_option)
