@@ -3,6 +3,7 @@ from modules.constants import WELCOME, OPTION_1, OPTION_2, OPTION_3, OPTION_4, F
 from modules.visuals import header
 from modules.order import executeOrder
 from modules.history import deleteHistory
+from modules.order_history import getOrderHistory
 from os import system
 
 def menu():
@@ -28,13 +29,15 @@ def menu():
     if option == 1:
       system("cls")
       executeOrder()
+      input("Presione enter para finalizar: ")
     elif option == 2:
-      # LLAMAR A CONSULTA DE COMPRAS
-      print("LLAMAR A CONSULTA DE COMPRAS")
+      system("cls")
+      getOrderHistory()
+      input("Presione enter para finalizar: ")
     elif option == 3:
       system("cls")
-      # LLAMAR A LIMPIEZA DE REGISTRO
       deleteHistory()
+      input("Presione enter para finalizar: ")
     elif option == 4:
       print(FAREWELL)
       sys.exit()

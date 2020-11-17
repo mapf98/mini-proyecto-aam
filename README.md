@@ -3,7 +3,7 @@
 ## La Pizzería
 
 ### Autores
+
 + **Alexander Fernández**
 + **Miguel Peña**
 + **Alba Sánchez**
-

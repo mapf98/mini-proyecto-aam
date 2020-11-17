@@ -106,4 +106,3 @@ def executeOrder():
   print('Gracias por su compra, regrese pronto!')
   saveOrder([(total_pizzas, len(pizzas)), (total_drinks[1], len(total_drinks[0]))], total_cost, "")
   print()
-  input("Presione enter para finalizar: ")
