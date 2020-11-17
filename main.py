@@ -1,10 +1,7 @@
 import sys
 from modules.constants import WELCOME, OPTION_1, OPTION_2, OPTION_3, OPTION_4, FAREWELL, PIZZAS
-
-def header():
-  print(20*'*')
-  print("* PIZZERIA UCAB *")
-  print(20*'*')
+from modules.info import ingredientOptions
+from modules.visuals import header
 
 def menu():
   print()
@@ -15,22 +12,30 @@ def menu():
   print(OPTION_3)
   print(OPTION_4)
   print()
-  option = int(input("Seleccione una opción: "))
-  print()
-  if option == 1:
-    # LLAMAR A FUNCION DE PIZZERIA
-    pass
-  elif option == 2:
-    # LLAMAR A CONSULTA DE COMPRAS
-    pass
-  elif option == 3:
-    # LLAMAR A LIMPIEZA DE REGISTRO
-    pass
-  elif option == 4:
-    print(FAREWELL)
-    sys.exit()
-    
-  print(option)
+  while True:
+    try:
+      option = int(input("Seleccione una opción: "))
+    except ValueError:
+      print()
+      print('Debes ingresar un número')
+      print()
+      continue
+    print()
+    if option == 1:
+      # LLAMAR A FUNCION DE PIZZERIA
+      print("LLAMAR A FUNCION DE PIZZERIA")
+      break
+    elif option == 2:
+      # LLAMAR A CONSULTA DE COMPRAS
+      print("LLAMAR A CONSULTA DE COMPRAS")
+      break
+    elif option == 3:
+      # LLAMAR A LIMPIEZA DE REGISTRO
+      print("LLAMAR A LIMPIEZA DE REGISTRO")
+      break
+    elif option == 4:
+      print(FAREWELL)
+      sys.exit()
 
 header()
 menu()

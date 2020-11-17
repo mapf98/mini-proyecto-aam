@@ -1,5 +1,5 @@
-from constants import PIZZAS, INGREDIENTS, DRINKS, DESSERTS
-from data import pizzas, ingredients, drinks, desserts 
+from .constants import PIZZAS, INGREDIENTS, DRINKS, DESSERTS
+from .data import pizzas, ingredients, drinks, desserts 
 
 def getListOfElements(name):
   if name == PIZZAS:
