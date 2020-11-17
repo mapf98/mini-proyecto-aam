@@ -3,6 +3,8 @@ from .constants import PIZZAS, INGREDIENTS
 from .info import pizzaOptions, ingredientOptions, getOption
 from .errors import invalidOption
 from .order_extra import addDrinks
+from .history import saveOrder
+from os import system
 
 def _getPizzaOptions():
   pizza_option = ""
@@ -89,11 +91,19 @@ def executeOrder():
       break
   
   total_drinks = addDrinks()
+  system("cls")
+  total_pizzas = total_cost
+  print('RESUMEN DE ORDEN')
+  print()
   print('****************************')
-  print(f'- EL pedido tiene un total de {len(pizzas)} pizza(s): {total_cost}')
+  print(f'- EL pedido tiene un total de {len(pizzas)} pizza(s): {total_pizzas}')
   if len(total_drinks[0]) > 0:
     print(f'- EL pedido tiene un total de {len(total_drinks[0])} bebida(s): {total_drinks[1]}')
   print()
   total_cost += total_drinks[1]
   print(f'Por un monto total de {total_cost}\n')
+  print('****************************')
   print('Gracias por su compra, regrese pronto!')
+  saveOrder([(total_pizzas, len(pizzas)), (total_drinks[1], len(total_drinks[0]))], total_cost, "")
+  print()
+  input("Presione enter para finalizar: ")
