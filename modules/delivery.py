@@ -3,7 +3,7 @@ from .constants import DELIVERY_COST, NUMBER_ERROR
 def delivery():
   info = ""
   while True:
-    response = input('¿Desea que le enviemos su pedido? Esto tiene un costo adicional de ' + str(DELIVERY_COST) + ' [s/n]: ')
+    response = input('¿Desea qué le enviemos su pedido? Esto tiene un costo adicional de ' + str(DELIVERY_COST) + ' [s/n]: ')
     print()
     if response.capitalize() == 'N' or response.capitalize() == 'S':
       break

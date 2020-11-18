@@ -26,7 +26,7 @@ def addDrinks():
       print()
       isDone = True
       drinkOptions()
-      option = getOption(input("Indique la bebida a seleccionar: "), DRINKS)
+      option = getOption(input("Indique la bebida a deseada: "), DRINKS)
       if option != None:
         drinks.append(option)
         print(f'Subtotal a pagar por una bebida {option[0]}: {option[2]}')

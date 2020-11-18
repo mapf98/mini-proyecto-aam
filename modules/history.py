@@ -29,13 +29,13 @@ def saveOrder(prices, total, info):
 
 def deleteHistory():
   while True:
-    response = input("¿Desea borrar el registro de todos los archivos de manera permanente? [s/n]")
+    response = input("¿Desea borrar el registro de todas las compras de manera permanente? [s/n]")
     if response.capitalize() == 'N' or response.capitalize() == 'S':
       break
   
   if response.capitalize() == 'S':
     if os.path.isfile(PATH):
-      os.remove("data/orders.txt")
+      os.remove(PATH)
       print()
       print("Datos borrados satisfactoriamente!")
       print()

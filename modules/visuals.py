@@ -1,4 +1,4 @@
 def header():
   print(20*'*')
-  print("* PIZZERIA UCAB *")
+  print("* PIZZERÍA UCAB *")
   print(20*'*')

@@ -38,11 +38,11 @@ def _presentOrders(orders):
 def getOrderHistory():
   header()
   print()
-  print(20 * '*', " ORDENES ", 20 * '*')
+  print(20 * '*', " COMPRAS ", 20 * '*')
   print()
   file_data = getHistory()
   if file_data != None:
     _presentOrders(_transformOrders(file_data))
   else:
-    print("No existen ordenes registradas")
+    print("No existen compras registradas!")
     print()

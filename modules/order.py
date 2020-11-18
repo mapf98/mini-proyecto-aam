@@ -11,7 +11,7 @@ def _getPizzaOptions():
   pizza_option = ""
   pizzaOptions()
   while True:
-    pizza_option = getOption(input('Indique el tamaño: '), PIZZAS)
+    pizza_option = getOption(input('Indique el tamaño de la pizza: '), PIZZAS)
     if pizza_option == None:
       invalidOption()
     else:
@@ -94,7 +94,7 @@ def executeOrder():
   info_delivery = delivery()
   system("cls")
   total_pizzas = total_cost
-  print('RESUMEN DE ORDEN')
+  print('RESUMEN DE COMPRA')
   print()
   print('****************************')
   print(f'- EL pedido tiene un total de {len(pizzas)} pizza(s): {total_pizzas}')
@@ -107,6 +107,6 @@ def executeOrder():
   total_cost += total_drinks[1]
   print(f'Por un monto total de {total_cost}\n')
   print('****************************')
-  print('Gracias por su compra, regrese pronto!')
+  print('Gracias por su compra, en breve el pedido estará listo!')
   saveOrder([(total_pizzas, len(pizzas)), (total_drinks[1], len(total_drinks[0]))], total_cost, info_delivery)
   print()
