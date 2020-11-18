@@ -1,13 +1,18 @@
 import os
 from datetime import datetime
-from .constants import SEPARATOR, DELIVERY_COST
-
-PATH = "data/orders.txt"
+from .constants import SEPARATOR, DELIVERY_COST, PATH, DATA_FOLDER
 
 def _openFile(value):
   return open(PATH, value)
 
+def _createDataFolder():
+  try:
+    os.stat(DATA_FOLDER)
+  except:
+    os.mkdir(DATA_FOLDER)
+
 def saveOrder(prices, total, info):
+  _createDataFolder()
   file = _openFile("a")
   file.write(str(datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
   file.write(SEPARATOR)
@@ -29,10 +34,15 @@ def deleteHistory():
       break
   
   if response.capitalize() == 'S':
-    os.remove("data/orders.txt")
-    print()
-    print("Datos borrados satisfactoriamente! (enter para continuar)", end="")
-    input()
+    if os.path.isfile(PATH):
+      os.remove("data/orders.txt")
+      print()
+      print("Datos borrados satisfactoriamente!")
+      print()
+    else:
+      print()
+      print("No hay datos actualmente registrados!")
+      print()
 
 def getHistory():
   try:
