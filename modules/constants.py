@@ -15,3 +15,6 @@ FAREWELL = 'Gracias por comprar en Pizzería UCAB, vuelva pronto.'
 
 # Separador de archivo de datos
 SEPARATOR = "|||"
+
+#Monto del delivery
+DELIVERY_COST = 5

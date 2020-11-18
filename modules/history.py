@@ -1,6 +1,6 @@
 import os
 from datetime import datetime
-from .constants import SEPARATOR
+from .constants import SEPARATOR, DELIVERY_COST
 
 PATH = "data/orders.txt"
 
@@ -17,6 +17,8 @@ def saveOrder(prices, total, info):
   file.write(str(total))
   file.write(SEPARATOR)
   file.write(str(info))
+  file.write(SEPARATOR)
+  file.write(str(DELIVERY_COST))
   file.write("\n")
   file.close()
 

@@ -17,7 +17,8 @@ def _transformOrders(orders_data):
         'quantity': drink[1]
       },
       'price': order_data[3],
-      'info': order_data[4]
+      'info': order_data[4],
+      'delivery_cost': order_data[5]
     })
   return orders
 
@@ -28,6 +29,7 @@ def _presentOrders(orders):
     print('Precio:', order['price'])
     if order['info']:
       print('Información:', order['info'])
+      print(f"- El pedido tiene un delivery con costo: {order['delivery_cost']}")
     print(f"- El pedido tiene un total de {order['pizza']['quantity']} pizza(s): {order['pizza']['price']}")
     if order['drink']['quantity'] != "0":
       print(f"- El pedido tiene un total de {order['drink']['quantity']} bebida(s): {order['drink']['price']}")
