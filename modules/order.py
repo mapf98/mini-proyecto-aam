@@ -1,9 +1,10 @@
 from .visuals import header
-from .constants import PIZZAS, INGREDIENTS
+from .constants import PIZZAS, INGREDIENTS, DELIVERY_COST
 from .info import pizzaOptions, ingredientOptions, getOption
 from .errors import invalidOption
 from .order_extra import addDrinks
 from .history import saveOrder
+from .delivery import delivery
 from os import system
 
 def _getPizzaOptions():
@@ -91,6 +92,7 @@ def executeOrder():
       break
   
   total_drinks = addDrinks()
+  info_delivery = delivery()
   system("cls")
   total_pizzas = total_cost
   print('RESUMEN DE ORDEN')
@@ -99,10 +101,13 @@ def executeOrder():
   print(f'- EL pedido tiene un total de {len(pizzas)} pizza(s): {total_pizzas}')
   if len(total_drinks[0]) > 0:
     print(f'- EL pedido tiene un total de {len(total_drinks[0])} bebida(s): {total_drinks[1]}')
+  if info_delivery != "":
+    print(f'- El pedido tiene un delivery de costo: {str(DELIVERY_COST)}')
+    total_cost += DELIVERY_COST
   print()
   total_cost += total_drinks[1]
   print(f'Por un monto total de {total_cost}\n')
   print('****************************')
   print('Gracias por su compra, regrese pronto!')
-  saveOrder([(total_pizzas, len(pizzas)), (total_drinks[1], len(total_drinks[0]))], total_cost, "")
+  saveOrder([(total_pizzas, len(pizzas)), (total_drinks[1], len(total_drinks[0]))], total_cost, info_delivery)
   print()
