@@ -1,6 +1,10 @@
 from .history import getHistory
 from .visuals import header
 
+"""
+  Transformar órdenes de una lista de listas que contienen los datos de la orden
+  a un diccionario con los datos organizados
+"""
 def _transformOrders(orders_data):
   orders = []
   for order_data in orders_data:
@@ -22,6 +26,7 @@ def _transformOrders(orders_data):
     })
   return orders
 
+# Presentar ordenes de forma organizada al usuario
 def _presentOrders(orders):
   for order in orders:
     print('='*15, f'> Orden {orders.index(order)+1}')
@@ -35,6 +40,7 @@ def _presentOrders(orders):
       print(f"- El pedido tiene un total de {order['drink']['quantity']} bebida(s): {order['drink']['price']}")
     print()
 
+# Obtener ordenes o mensaje que indique que no existen ordenes registradas
 def getOrderHistory():
   header()
   print()

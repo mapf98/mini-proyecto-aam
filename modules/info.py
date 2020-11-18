@@ -1,6 +1,7 @@
 from .constants import PIZZAS, INGREDIENTS, DRINKS
 from .data import pizzas, ingredients, drinks 
 
+# Obtener lista de elementos con sus precios
 def _getListOfElements(name):
   if name == PIZZAS:
     return pizzas
@@ -9,6 +10,7 @@ def _getListOfElements(name):
   if name == DRINKS:
     return drinks
 
+# Obtener tamaños de pizzas
 def pizzaOptions():
   print('Tamaños: ', end="")
   for option in pizzas:
@@ -17,6 +19,7 @@ def pizzaOptions():
         print(f'{option} ({valor})', end=" ")
   print("")
 
+# Obtener posibles ingredientes extra en una pizza
 def ingredientOptions():
   print('Ingredientes: ')
   for option in ingredients:
@@ -24,6 +27,7 @@ def ingredientOptions():
       if clave == 'symbol':
         print(f'- {option} ({valor})')
 
+# Obtener posibles bebidas
 def drinkOptions():
   print('Bebidas: ')
   for option in drinks:
@@ -31,6 +35,7 @@ def drinkOptions():
       if clave == 'symbol':
         print(f'- {option} ({valor})')
 
+# Validar y obtener opción seleccionada por un usuario
 def getOption(symbol, listOfElements):
   elements = _getListOfElements(listOfElements)
   for option in elements:

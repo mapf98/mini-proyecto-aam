@@ -7,6 +7,7 @@ from .history import saveOrder
 from .delivery import delivery
 from os import system
 
+# Validar y obtener el tamaño de pizza de la orden
 def _getPizzaOptions():
   pizza_option = ""
   pizzaOptions()
@@ -19,6 +20,7 @@ def _getPizzaOptions():
       break
   return pizza_option
 
+# Validar y obtener los ingredientes de la orden
 def _getPizzaIngredients():
   ingredients = []
   ingredientOptions()
@@ -34,6 +36,7 @@ def _getPizzaIngredients():
       break
   return ingredients
 
+# Validar y obtener el tipo de pizza de la orden (margarita o con ingredientes)
 def _getPizzaType(ingredients):
   pizza_type = ""
   if (len(ingredients) == 0):
@@ -46,12 +49,14 @@ def _getPizzaType(ingredients):
         pizza_type = pizza_type + ", "
   return pizza_type
 
+# Obtener el costo de una pizza
 def _getPizzaCost(pizza_option, pizza_ingredients):
   pizza_cost = pizza_option[2]
   for ingredient in pizza_ingredients:
     pizza_cost = pizza_cost + ingredient[2]
   return pizza_cost
 
+# Validar si el usuario desea continuar agregando pizzas a la orden
 def _continueOrder():
   continue_order = ""
   while True:
@@ -60,6 +65,7 @@ def _continueOrder():
       break
   return continue_order.capitalize() == 'S'
 
+# Ejecución de una orden con una o varias pizzas
 def executeOrder():
   pizzas = []
   total_cost = 0

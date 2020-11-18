@@ -2,15 +2,18 @@ import os
 from datetime import datetime
 from .constants import SEPARATOR, DELIVERY_COST, PATH, DATA_FOLDER
 
+# Abrir archivo de órdenes
 def _openFile(value):
   return open(PATH, value)
 
+# Crear carpeta data en caso de que no exista
 def _createDataFolder():
   try:
     os.stat(DATA_FOLDER)
   except:
     os.mkdir(DATA_FOLDER)
 
+# Salvar ordenes con el formato establecido
 def saveOrder(prices, total, info):
   _createDataFolder()
   file = _openFile("a")
@@ -27,6 +30,7 @@ def saveOrder(prices, total, info):
   file.write("\n")
   file.close()
 
+# Eliminar las ordenes registradas
 def deleteHistory():
   while True:
     response = input("¿Desea borrar el registro de todas las compras de manera permanente? [s/n]")
@@ -44,6 +48,7 @@ def deleteHistory():
       print("No hay datos actualmente registrados!")
       print()
 
+# Obtener historico de ordenes
 def getHistory():
   try:
     file = _openFile("r")

@@ -6,6 +6,7 @@ from modules.history import deleteHistory
 from modules.order_history import getOrderHistory
 from os import system
 
+# Menú principal
 def menu():
   while True:
     system("cls")
@@ -29,17 +30,15 @@ def menu():
     if option == 1:
       system("cls")
       executeOrder()
-      input("Presione enter para finalizar: ")
     elif option == 2:
       system("cls")
       getOrderHistory()
-      input("Presione enter para finalizar: ")
     elif option == 3:
       system("cls")
       deleteHistory()
-      input("Presione enter para finalizar: ")
     elif option == 4:
       print(FAREWELL)
       sys.exit()
+    input("Presione enter para finalizar: ")
 
 menu()

@@ -1,3 +1,5 @@
+# Precios y símbolos de cada pizza, ingrediente y bebida
+
 pizzas = {
   "Grande": {"symbol": "g", "price": 580},
   "Mediana": {"symbol": "m", "price": 430},

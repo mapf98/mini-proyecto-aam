@@ -1,6 +1,7 @@
 from .info import drinkOptions, getOption
 from .constants import DRINKS
 
+# Obtener cantidad de bebidas seleccionadas con su precio
 def _totalDrinks(drinks):
   total = 0
   listOfDrinks = []
@@ -12,15 +13,18 @@ def _totalDrinks(drinks):
   else:
     return (listOfDrinks, total)
 
+# Añadir bebidas a una orden
 def addDrinks():
   drinks = []
   hasDrinks = True
 
+  # Preguntar al usuario si desea bebidas
   while True:
     response = input('¿Desea incluir bebidas a su pedido? [s/n]: ')
     if response.capitalize() == 'N' or response.capitalize() == 'S':
       break
 
+  # Si el usuario desea bebidas, registrar todas las bebidas deseadas
   if response.capitalize() == 'S':
     while hasDrinks:
       print()
