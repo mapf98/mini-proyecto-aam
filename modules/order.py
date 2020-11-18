@@ -61,7 +61,6 @@ def _continueOrder():
   return continue_order.capitalize() == 'S'
 
 def executeOrder():
-  # Variables
   pizzas = []
   total_cost = 0
 
